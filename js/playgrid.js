@@ -48,16 +48,22 @@ var playgrid = {
     // Conditions to check for victory. Checks values in array for all 8 possible wins (better way to do this?)
     checkwin: function() {
         if (this.moves == 9) { return this.done(0); }
-        else if (this.gridval[0] != 0 && this.gridval[0] == this.gridval[1] && this.gridval[1] == this.gridval[2]) { return this.done(this.gridval[0]); }
-        else if (this.gridval[3] != 0 && this.gridval[3] == this.gridval[4] && this.gridval[4] == this.gridval[5]) { return this.done(this.gridval[3]); }
-        else if (this.gridval[6] != 0 && this.gridval[6] == this.gridval[7] && this.gridval[7] == this.gridval[8]) { return this.done(this.gridval[6]); }
-        else if (this.gridval[0] != 0 && this.gridval[0] == this.gridval[3] && this.gridval[3] == this.gridval[6]) { return this.done(this.gridval[0]); }
-        else if (this.gridval[1] != 0 && this.gridval[1] == this.gridval[4] && this.gridval[4] == this.gridval[7]) { return this.done(this.gridval[1]); }
-        else if (this.gridval[2] != 0 && this.gridval[2] == this.gridval[5] && this.gridval[5] == this.gridval[8]) { return this.done(this.gridval[2]); }
-        else if (this.gridval[0] != 0 && this.gridval[0] == this.gridval[4] && this.gridval[4] == this.gridval[8]) { return this.done(this.gridval[0]); }
-        else if (this.gridval[2] != 0 && this.gridval[2] == this.gridval[4] && this.gridval[4] == this.gridval[6]) { return this.done(this.gridval[2]); }
+        else if (checkset(this.gridval[0], this.gridval[1], this.gridval[2]) == 1) { return this.done(this.gridval[0]); }
+        else if (checkset(this.gridval[3], this.gridval[4], this.gridval[5]) == 1) { return this.done(this.gridval[3]); }
+        else if (checkset(this.gridval[6], this.gridval[7], this.gridval[8]) == 1) { return this.done(this.gridval[6]); }
+        else if (checkset(this.gridval[0], this.gridval[3], this.gridval[6]) == 1) { return this.done(this.gridval[0]); }
+        else if (checkset(this.gridval[1], this.gridval[4], this.gridval[7]) == 1) { return this.done(this.gridval[1]); }
+        else if (checkset(this.gridval[2], this.gridval[5], this.gridval[8]) == 1) { return this.done(this.gridval[2]); }
+        else if (checkset(this.gridval[0], this.gridval[4], this.gridval[8]) == 1) { return this.done(this.gridval[0]); }
+        else if (checkset(this.gridval[2], this.gridval[4], this.gridval[6]) == 1) { return this.done(this.gridval[2]); }
         else { return 0; }
     },
+
+    // Check the selected row for victory
+    checkset: function(sq1, sq2, sq3) {
+        if (sq1 != 0 && sq1 == sq2 && sq2 == sq3) { return 1; }
+        else { return 0; }
+    }
     
     // If someone has won, throw up a message, and reset the game board
     done: function(winner) {
