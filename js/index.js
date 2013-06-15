@@ -15,7 +15,7 @@ $(document).ready(function(){
     }
     $('.grid').width(size);
     $('.grid').height(size);
-    $('.grid').css('line-height', Math.round(size/50)+"em");
+    $('.grid').css('line-height', Math.round(size/73)+"em");
     $('.playtbl').css('margin-left', Math.round(size/2)+"px");
     
     // Start it up, and assign click trigger for squares

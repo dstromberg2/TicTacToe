@@ -17,9 +17,11 @@ var playgrid = {
         
             // assign the square
             this.gridval[chosen] = this.turn;
-            if (this.turn == 1) { var disp = "X"; }
-            else { var disp = "O"; }
+            if (this.turn == 1) { var disp = "X"; var col = "#603200"; }
+            else { var disp = "O"; var col = "#00760"; }
             $('#'+id).text(disp);
+            $('#'+id).css('color', 'rgba(0, 0, 0, 0)');
+            $('#'+id).animate({ color: col}, 500);
             this.moves++;
             // check for victory conditions, if no win, move to the next player
             if (this.checkwin() == 0) { this.nextturn(); }

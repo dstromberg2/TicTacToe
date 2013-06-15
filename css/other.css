@@ -17,5 +17,26 @@
     width: 90%;
     height: 100%;
     left: 150%;
+}
 
+.credittext {
+    padding: 150px 60px 0 60px;
+    font-size: 30pt;
+}
+
+.credittext a {
+    color: #055F5E;
+    text-decoration: none;
+}
+
+.stattext {
+    padding: 100px 60px 0 60px;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+.opttext {
+    padding: 100px 60px 0 60px;
+    font-size: 28pt;
+    font-weight: bold;
 }
