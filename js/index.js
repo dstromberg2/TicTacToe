@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('#startgame').click(function() { $('.app').slidein(); });
     $('#stats').click(function() { $('.statpage').slidein(); });        
     $('#opts').click(function() { $('.optpage').slidein(); });
-    $('#credits').click(function() { $('.optpage').slidein(); });
+    $('#credits').click(function() { $('.creditpage').slidein(); });
 
     // Setup display of game grid based upon device screen size
     if ($(window).width() < $(window).height()) {
