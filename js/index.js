@@ -1,11 +1,12 @@
 $(document).ready(function(){
 
     // Setup slide effects for each page
-    $('.backbtn').click(function() { $(this).parent().slideout(); });
-    $('#startgame').click(function() { $('.app').slidein(); });
-    $('#stats').click(function() { $('.statpage').slidein(); });        
-    $('#opts').click(function() { $('.optpage').slidein(); });
-    $('#credits').click(function() { $('.creditpage').slidein(); });
+    slider.initialize();
+    $('.backbtn').click(function() { slider.slideout(); });
+    $('#startgame').click(function() { slider.slidein('app'); });
+    $('#stats').click(function() { slider.slidein('statpage'); });        
+    $('#opts').click(function() { slider.slidein('optpage'); });
+    $('#credits').click(function() { slider.slidein('creditpage'); });
 
     // Setup display of game grid based upon device screen size
     if ($(window).width() < $(window).height()) {

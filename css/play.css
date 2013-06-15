@@ -10,14 +10,14 @@
 }
 
 .score {
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 50px;
 }
 
 .pcont {
     text-align: center;
-    font-size: 32pt;
+    font-size: 30pt;
     padding: 15px;
     border-radius: 25px;
 }
