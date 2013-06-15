@@ -69,6 +69,18 @@ var playgrid = {
     
     // If someone has won, throw up a message, and reset the game board
     done: function(winner) {
+        if (winner == 0) { var winmsg = "Draw!"; }
+        else { var winmsg = "Player "+winner+" wins!"; }
+        navigator.notification.alert(
+            winmsg,
+            this.resetBoard,
+            'Game Over',
+            'Done'
+        );
+    
+    },
+    
+    function resetboard() {
         if (winner == 0) { alert("Draw!"); }
         else { alert("Player "+winner+" wins!"); }
         $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 500);
