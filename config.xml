@@ -4,12 +4,12 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.dstromberg.ttt"
-        version   = "0.5.0">
+        version   = "0.5.5">
 
     <name>TicTacToe</name>
 
     <description>
-        A simple 2 player TicTacToe game
+        A simple TicTacToe game
     </description>
 
     <author href="http://weberish.com" email="david@weberish.com">
