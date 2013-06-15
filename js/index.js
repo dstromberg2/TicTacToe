@@ -1,4 +1,12 @@
 $(document).ready(function(){
+
+    // Setup slide effects for each page
+    $('.backbtn').click(function() { $(this).parent().slideout(); });
+    $('#startgame').click(function() { $('.app').slidein(); });
+    $('#stats').click(function() { $('.statpage').slidein(); });        
+    $('#opts').click(function() { $('.optpage').slidein(); });
+    $('#credits').click(function() { $('.optpage').slidein(); });
+
     // Setup display of game grid based upon device screen size
     if ($(window).width() < $(window).height()) {
         var size = Math.round($(window).width()/4);
