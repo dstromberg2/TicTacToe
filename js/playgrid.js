@@ -80,7 +80,7 @@ var playgrid = {
     
     },
     
-    function resetboard() {
+    resetboard: function() {
         if (winner == 0) { alert("Draw!"); }
         else { alert("Player "+winner+" wins!"); }
         $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 500);
