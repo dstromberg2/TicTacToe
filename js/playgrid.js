@@ -49,8 +49,7 @@ var playgrid = {
     
     // Conditions to check for victory. Checks values in grid for draw or all 8 possible wins
     checkwin: function() {
-        if (this.moves == 9) { return this.done(0); }
-        else if (this.checkset(this.gridval[0], this.gridval[1], this.gridval[2]) == 1) { return this.done(this.gridval[0]); }
+        if (this.checkset(this.gridval[0], this.gridval[1], this.gridval[2]) == 1) { return this.done(this.gridval[0]); }
         else if (this.checkset(this.gridval[3], this.gridval[4], this.gridval[5]) == 1) { return this.done(this.gridval[3]); }
         else if (this.checkset(this.gridval[6], this.gridval[7], this.gridval[8]) == 1) { return this.done(this.gridval[6]); }
         else if (this.checkset(this.gridval[0], this.gridval[3], this.gridval[6]) == 1) { return this.done(this.gridval[0]); }
@@ -58,6 +57,7 @@ var playgrid = {
         else if (this.checkset(this.gridval[2], this.gridval[5], this.gridval[8]) == 1) { return this.done(this.gridval[2]); }
         else if (this.checkset(this.gridval[0], this.gridval[4], this.gridval[8]) == 1) { return this.done(this.gridval[0]); }
         else if (this.checkset(this.gridval[2], this.gridval[4], this.gridval[6]) == 1) { return this.done(this.gridval[2]); }
+        else if (this.moves == 9) { return this.done(0); }
         else { return 0; }
     },
 
