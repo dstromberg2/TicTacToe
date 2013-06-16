@@ -19,6 +19,16 @@ $(document).ready(function(){
     $('.grid').css('line-height', Math.round(size/73)+"em");
     $('.playtbl').css('margin-left', Math.round(size/2)+"px");
     
+    // Loading and saving the username
+    var uname = window.localStorage.getItem("uname");
+    if (null == uname || uname == "null") { uname = "Player 1"; }
+    $('#uname').val(uname);
+    $('.savebtn').click(function() {
+        $('.loading').show();
+        window.localStorage.setItem("uname", $('#uname').val());
+        setTimeout(function() { $('.loading').hide(); }, 500);
+    });
+    
     // Start it up, and assign click triggers
     playgrid.initialize();
     

@@ -6,6 +6,19 @@ var playgrid = {
         this.moves = 0;
         $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 1)', color: '#862500'}, 500);
         $('.grid').empty();
+        this.setPlayers();
+    },
+    
+    setPlayers: function() {
+        this.uname = window.localStorage.getItem("uname");
+        if (null == uname || uname == "null") { this.uname = "Player 1"; }
+        var rp = Math.floor(Math.random() * 2) + 1;
+        if (rp == 1) { var op = 2; }
+        else { var op = 1; }
+        $('#p'+rp+' > .pname').empty().text(this.uname);
+        $('#p'+op+' > .pname').empty().text("Player 2");
+        $('#p1 > .pname').append(" (X)");
+        $('#p2 > .pname').append(" (O)");
     },
     
     // When a square is pressed...
