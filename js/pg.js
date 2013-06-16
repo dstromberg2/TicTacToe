@@ -7,7 +7,7 @@ function onDeviceReady() {
 }
 
 function onBackKeyDown() {
-    if ($.mobile.activePage.is('.intro')) {
+    if (slider.current == 'intro') {
         e.preventDefault();
         navigator.app.exitApp();
     } else {
