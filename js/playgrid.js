@@ -14,6 +14,7 @@ var playgrid = {
         this.uname = window.localStorage.getItem("uname");
         if (null == uname || uname == "null") { this.uname = "Player 1"; }
         var rp = Math.floor(Math.random() * 2) + 1;
+        this.playerpos = rp;
         if (rp == 1) { var op = 2; }
         else { var op = 1; }
         $('#p'+rp+' > .pname').empty().text(this.uname);
@@ -83,6 +84,7 @@ var playgrid = {
     
     // If someone has won, throw up a message, and reset the game board
     done: function(winner) {
+        stats.setNew(this.playerpos, winner);
         if (winner == 0) { var winmsg = "Draw!"; }
         else { var winmsg = "Player "+winner+" wins!"; }
         winmsg = winmsg+"<br /><br /><div class='closebtn'>Next Game</div>";

@@ -29,6 +29,9 @@ $(document).ready(function(){
         setTimeout(function() { $('.loading').hide(); }, 500);
     });
     
+    stats.initialize();
+    $('.resetbtn').click(function() { stats.reset(); });
+    
     // Start it up, and assign click triggers
     playgrid.initialize();
     

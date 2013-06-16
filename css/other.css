@@ -70,3 +70,13 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+.resetbtn {
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #858585;
+    width: 200px;
+    padding: 20px;
+    margin: 0 auto;
+    color: #0D005C;
+}
