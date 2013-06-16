@@ -7,5 +7,10 @@ function onDeviceReady() {
 }
 
 function onBackKeyDown() {
-    slider.slideout();
+    if ($.mobile.activePage.is('.intro')) {
+        e.preventDefault();
+        navigator.app.exitApp();
+    } else {
+        slider.slideout();
+    }
 }
