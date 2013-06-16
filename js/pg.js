@@ -7,7 +7,8 @@ function onDeviceReady() {
 }
 
 function onBackKeyDown() {
-    if (slider.current == 'intro') {
+    if (slider.current == "intro") {
+        alert('test');
         e.preventDefault();
         navigator.app.exitApp();
     } else {
