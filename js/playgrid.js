@@ -8,7 +8,8 @@ var playgrid = {
         $('.grid').empty();
         this.setPlayers();
     },
-    
+
+    // Determine starting player, get username, assign displays    
     setPlayers: function() {
         this.uname = window.localStorage.getItem("uname");
         if (null == uname || uname == "null") { this.uname = "Player 1"; }
