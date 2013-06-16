@@ -21,7 +21,7 @@ var playgrid = {
             else { var disp = "O"; var col = "#00760"; }
             $('#'+id).text(disp);
             $('#'+id).css('color', 'rgba(0, 0, 0, 0)');
-            $('#'+id).animate({ color: col}, 500);
+            $('#'+id).animate({ color: col}, 200);
             this.moves++;
             // check for victory conditions, if no win, move to the next player
             if (this.checkwin() == 0) { this.nextturn(); }
@@ -30,7 +30,7 @@ var playgrid = {
         
             // if it is not available, flash the square
             $('#'+id).animate({ backgroundColor: '#F55C5C'}, 100);
-            $('#'+id).animate({ backgroundColor: 'rgba(245, 92, 92, 0)'}, 500);
+            $('#'+id).animate({ backgroundColor: 'rgba(245, 92, 92, 0)'}, 300);
         }
     },
     
@@ -38,12 +38,12 @@ var playgrid = {
     nextturn: function() {
         if (this.turn == 1) {
             this.turn = 2;
-            $('#p2').animate({backgroundColor: 'rgba(247, 230, 83, 1)', color: '#862500'}, 500);
-            $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 500);
+            $('#p2').animate({backgroundColor: 'rgba(247, 230, 83, 1)', color: '#862500'}, 300);
+            $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 300);
         } else {
             this.turn = 1;
-            $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 1)', color: '#862500'}, 500);
-            $('#p2').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 500);
+            $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 1)', color: '#862500'}, 300);
+            $('#p2').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 300);
         }
     },
     
@@ -71,18 +71,13 @@ var playgrid = {
     done: function(winner) {
         if (winner == 0) { var winmsg = "Draw!"; }
         else { var winmsg = "Player "+winner+" wins!"; }
-        navigator.notification.alert(
-            winmsg,
-            this.resetBoard,
-            'Game Over',
-            'Done'
-        );
-    
+        winmsg = winmsg+"<br /><br /><div class='closebtn'>Next Game</div>";
+        $('.gameover').empty();
+        $('.gameover').html(winmsg);
+        $('.gameover').animate({ top: '20%'}, 700);
     },
     
     resetboard: function() {
-        if (winner == 0) { alert("Draw!"); }
-        else { alert("Player "+winner+" wins!"); }
         $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 500);
         $('#p2').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 500);
         this.initialize();

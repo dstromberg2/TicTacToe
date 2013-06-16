@@ -69,3 +69,27 @@
         
 }
 
+.gameover {
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    top: 150%;
+    left: 25%;
+    padding-top: 60px;
+    border: 5px solid #96B3FF;
+    border-radius: 40px;
+    color: #000593;
+    font-size: 40pt;
+    background-color: #BFFFC7;
+}
+
+.closebtn {
+    width: 200px;
+    padding: 20px 0;
+    margin: 0 auto;
+    font-size: 32pt;
+    background-color: #96B3FF;
+    border: 3px solid #C8E16F;
+    border-radius: 30px;
+    color: #661100;
+}

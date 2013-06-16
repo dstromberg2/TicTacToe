@@ -19,8 +19,13 @@ $(document).ready(function(){
     $('.grid').css('line-height', Math.round(size/73)+"em");
     $('.playtbl').css('margin-left', Math.round(size/2)+"px");
     
-    // Start it up, and assign click trigger for squares
+    // Start it up, and assign click triggers
     playgrid.initialize();
+    
+    $('.gameover').click(function() {
+        $('.gameover').animate({ top: '150%' }, 500);
+        playgrid.resetboard();
+    });
 
     $('.grid').click(function() {
         playgrid.choose($(this).attr('id'));
