@@ -13,12 +13,14 @@ var playgrid = {
     setPlayers: function() {
         this.uname = window.localStorage.getItem("uname");
         if (null == this.uname || this.uname == "null") { this.uname = "Player 1"; }
-        var rp = Math.floor(Math.random() * 2) + 1;
-        this.playerpos = rp;
-        if (rp == 1) { var op = 2; }
-        else { var op = 1; }
-        $('#p'+rp+' > .pname').empty().text(this.uname);
-        $('#p'+op+' > .pname').empty().text("Player 2");
+        this.playerpos = Math.floor(Math.random() * 2) + 1;
+        if (this.playerpos == 1) { this.aipos = 2; }
+        else { 
+            this.aipos = 1;
+            ai.makemove(this.gridval, this.aipos);
+        }
+        $('#p'+this.playerpos+' > .pname').empty().text(this.uname);
+        $('#p'+this.aipos+' > .pname').empty().text("AI");
         $('#p1 > .pname').append(" (X)");
         $('#p2 > .pname').append(" (O)");
     },
@@ -60,6 +62,7 @@ var playgrid = {
             $('#p1').animate({backgroundColor: 'rgba(247, 230, 83, 1)', color: '#862500'}, 300);
             $('#p2').animate({backgroundColor: 'rgba(247, 230, 83, 0)', color: '#000'}, 300);
         }
+        if (this.turn == this.aipos) { ai.makemove(this.gridval, this.aipos); }
     },
     
     // Conditions to check for victory. Checks values in grid for draw or all 8 possible wins
