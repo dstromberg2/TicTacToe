@@ -12,7 +12,7 @@ var playgrid = {
     // Determine starting player, get username, assign displays    
     setPlayers: function() {
         this.uname = window.localStorage.getItem("uname");
-        if (null == uname || uname == "null") { this.uname = "Player 1"; }
+        if (null == this.uname || this.uname == "null") { this.uname = "Player 1"; }
         var rp = Math.floor(Math.random() * 2) + 1;
         this.playerpos = rp;
         if (rp == 1) { var op = 2; }

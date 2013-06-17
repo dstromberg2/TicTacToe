@@ -26,6 +26,7 @@ $(document).ready(function(){
     $('.savebtn').click(function() {
         $('.loading').show();
         window.localStorage.setItem("uname", $('#uname').val());
+        playgrid.initialize();
         setTimeout(function() { $('.loading').hide(); }, 500);
     });
     
