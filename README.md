@@ -1,5 +1,6 @@
 This is a simple TicTacToe game for PhoneGap.
 
-At present, it is a 2 player game (ability to play against the computer coming later).
+Played against AI, which uses minimax implemented heuristic algorithm.
+Saves statistics on games played.
 
 Utilizes HTML, CSS and Javascript for all functionality.
