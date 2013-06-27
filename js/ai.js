@@ -5,8 +5,7 @@ var ai = {
         this.player = player;
         if (this.player == 1) { this.opp = 2; }
         else { this.opp = 1; }
-        
-        var best = this.determine(4, this.player);
+        var best = this.determine(2, this.player);
         this.select(best[1]);
     },
     
@@ -51,7 +50,7 @@ var ai = {
         return [bestscore, bestmove];
     },
     
-    evaluateBoard: function() {
+    evaluateBoard: function(mover) {
         var score = 0;
         score += this.evaluateLine(0, 1, 2);
         score += this.evaluateLine(3, 4, 5);
@@ -88,7 +87,7 @@ var ai = {
             else if (score > 1) { return 0; }
             else { score = -1; }
         }
-        return score;    
+        return score;
     },
 
     select: function(id) {
